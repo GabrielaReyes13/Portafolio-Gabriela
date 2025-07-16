@@ -1,463 +1,740 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-    <meta charset="utf-8">
-    <title>Portafolio Gabriela</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gabriela Reyes - Portafolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+  <!-- Particles.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"> 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- AOS (Animate on Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
-    <link href="css/style.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #0f172a;
+    }
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -10;
+      top: 0;
+      left: 0;
+    }
+    .blur-bg {
+      position: fixed;
+      top: -200px;
+      right: -150px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle at center, #0ff, #00f, transparent);
+      filter: blur(200px);
+      z-index: -9;
+      animation: pulse 8s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.6; }
+      50% { transform: scale(1.2); opacity: 1; }
+    }
+    .scroll-indicator {
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+
+    /* Subrayados personalizados */
+    .highlight-pink {
+      position: relative;
+      display: inline-block;
+    }
+    .highlight-pink::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      background: #ff2cb1;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    .highlight-blue {
+      position: relative;
+      display: inline-block;
+    }
+    .highlight-blue::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      background: #458eff;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    .highlight-orange {
+      position: relative;
+      display: inline-block;
+    }
+    .highlight-orange::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      background: #ff6d3f;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+    }
+  </style>
 </head>
 
-<body data-spy="scroll" data-target=".navbar" data-offset="51">
-    <!-- Navbar Start -->
-    <nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5">
-        <a href="index.html" class="navbar-brand ml-lg-3">
-            <h1 class="m-0 display-5"><span class="text-primary">Gabriela</span>Reyes</h1>
-        </a>
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
+<body class="text-white relative scroll-smooth">
+
+  <!-- FONDO -->
+  <div id="particles-js"></div>
+  <div class="blur-bg"></div>
+
+  <!-- HERO -->
+  <section class="min-h-screen flex flex-col items-center justify-center px-6 text-center z-10 relative">
+    <h1 class="text-6xl md:text-8xl font-extrabold tracking-tight drop-shadow-lg">GABRIELA REYES</h1>
+    <p class="mt-6 text-lg font-mono text-white/80 tracking-wide">
+      ESTUDIANTE DE INGENIERÍA DE SISTEMAS
+    </p>
+    <p class="mt-4 text-white/60 max-w-xl mx-auto leading-relaxed">
+      Diseñando experiencias con propósito, aprendiendo cada día para construir soluciones útiles, humanas y funcionales.
+    </p>
+
+    <!-- Botones -->
+    <div class="mt-8 flex flex-wrap justify-center gap-4">
+      <a href="https://drive.google.com/file/d/1EueEmSi7fGdpsNcF_ndvcL6yfKaA56us/view?usp=sharing" download class="border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-cyan-700 transition duration-300">
+        Descargar CV
+      </a>
+      <a href="https://www.linkedin.com/in/gabriela-reyes-a7b46a1a5/" target="_blank" class="border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-cyan-700 transition duration-300">
+        Linkedin
+      </a>
+    </div>
+
+    <!-- Indicador de scroll -->
+    <div class="mt-14 scroll-indicator">
+      <div class="w-5 h-5 border-2 border-cyan-400 rounded-full flex items-center justify-center mx-auto">
+        <div class="w-2 h-2 bg-cyan-400 rounded-full"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobremi" class="relative z-10 py-32 px-6 bg-transparent">
+  <div class="absolute -top-40 left-1/2 transform -translate-x-1/2 w-[600px] h-[600px] bg-cyan-400 opacity-10 blur-3xl rounded-full pointer-events-none"></div>
+
+  <div data-aos="fade-up"
+    class="max-w-6xl mx-auto px-10 py-12 rounded-2xl backdrop-blur-xl bg-white/10 border border-white/10 shadow-2xl transition">
+
+    <h2 class="text-4xl md:text-5xl font-extrabold text-cyan-300 mb-8 text-center">Sobre mí</h2>
+
+    <!-- Descripción -->
+    <p class="text-white/80 text-lg text-center leading-relaxed max-w-4xl mx-auto mb-8">
+      Soy estudiante del 9no ciclo de Ingeniería de Sistemas de Información, destacada por mi compromiso, adaptabilidad y <span class="text-cyan-300 font-semibold">creatividad</span>. Me motiva generar soluciones funcionales y empáticas que conecten con los usuarios. <br><br>
+      Apunto a seguir creciendo profesionalmente en un entorno que valore la innovación, la tecnología con propósito y el aprendizaje constante.
+    </p>
+
+    <!-- Datos en Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-white/90 text-sm md:text-base max-w-4xl mx-auto">
+      <div class="flex items-center gap-3">
+        <i class="fas fa-user text-cyan-400"></i>
+        <span><strong>Nombre:</strong> Gabriela Reyes</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <i class="fas fa-birthday-cake text-cyan-400"></i>
+        <span><strong>Edad:</strong> 22 años</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <i class="fas fa-graduation-cap text-cyan-400"></i>
+        <span><strong>Grado:</strong> Estudiante</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <i class="fas fa-university text-cyan-400"></i>
+        <span><strong>Universidad:</strong> Universidad Peruana de Ciencias Aplicadas</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <i class="fas fa-phone text-cyan-400"></i>
+        <span><strong>Teléfono:</strong> +51 943 627 895</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <i class="fas fa-envelope text-cyan-400"></i>
+        <span><strong>Email:</strong> gabrielareyes9194@gmail.com</span>
+      </div>
+    </div>
+
+    <!-- Línea decorativa -->
+    <div class="mt-12 w-12 h-1 mx-auto bg-cyan-400 rounded-full"></div>
+  </div>
+</section>
+
+<section id="expertise" class="bg-[#0f172a] py-24 px-4 text-white font-mono">
+  <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-16 font-sans">
+    Mi <span class="text-cyan-400">Experiencia</span>
+  </h2>
+
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+
+    <!-- Software Development -->
+    <div class="bg-[#1a1a1a] border border-[#444] p-8 rounded-md shadow-md">
+      <div class="flex items-center gap-4 mb-4">
+        <div class="text-3xl">💻</div>
+        <div>
+          <h3 class="text-lg font-bold leading-tight relative inline-block">
+            <span class="z-10 relative">Software</span>
+            <span class="absolute bottom-0 left-0 w-full h-1 bg-pink-500 z-0"></span>
+          </h3>
+          <div class="text-xl font-bold font-sans -mt-1">Development</div>
+        </div>
+      </div>
+      <p class="text-sm leading-relaxed mt-2">
+        Conocimientos en programación funcional y orientada a objetos con Dart, Python, Java y JavaScript. Buenas prácticas, estructuras y lógica.
+      </p>
+    </div>
+
+    <!-- Frontend -->
+    <div class="bg-[#1a1a1a] border border-[#444] p-8 rounded-md shadow-md">
+      <div class="flex items-center gap-4 mb-4">
+        <div class="text-3xl">⚛️</div>
+        <div>
+          <h3 class="text-lg font-bold leading-tight relative inline-block">
+            <span class="z-10 relative">Frontend Dev</span>
+            <span class="absolute bottom-0 left-0 w-full h-1 bg-blue-400 z-0"></span>
+          </h3>
+          <div class="text-xl font-bold font-sans -mt-1">React, NextJS</div>
+        </div>
+      </div>
+      <p class="text-sm leading-relaxed mt-2">
+        Prototipado e interfaces centradas en el usuario. Familiaridad con HTML, CSS, JavaScript, React y principios UX/UI. Diseño funcional y responsivo.
+      </p>
+    </div>
+
+    <!-- Flutter -->
+    <div class="bg-[#1a1a1a] border border-[#444] p-8 rounded-md shadow-md">
+      <div class="flex items-center gap-4 mb-4">
+        <div class="text-3xl">📱</div>
+        <div>
+          <h3 class="text-lg font-bold leading-tight relative inline-block">
+            <span class="z-10 relative">Flutter Dev</span>
+            <span class="absolute bottom-0 left-0 w-full h-1 bg-orange-400 z-0"></span>
+          </h3>
+          <div class="text-xl font-bold font-sans -mt-1">Android, iOS</div>
+        </div>
+      </div>
+      <p class="text-sm leading-relaxed mt-2">
+        Desarrollo de apps móviles con Flutter y Firebase. Experiencia en integración con Firestore, notificaciones, autenticación y APIs REST.
+      </p>
+    </div>
+
+    <!-- Power BI -->
+    <div class="bg-[#1a1a1a] border border-[#444] p-8 rounded-md shadow-md">
+      <div class="flex items-center gap-4 mb-4">
+        <div class="text-3xl">📊</div>
+        <div>
+          <h3 class="text-lg font-bold leading-tight relative inline-block">
+            <span class="z-10 relative">Power BI</span>
+            <span class="absolute bottom-0 left-0 w-full h-1 bg-yellow-300 z-0"></span>
+          </h3>
+          <div class="text-xl font-bold font-sans -mt-1">Data Analytics</div>
+        </div>
+      </div>
+      <p class="text-sm leading-relaxed mt-2">
+        Formación especializada en Power BI. Experiencia en análisis de datos, visualizaciones e informes interactivos orientados a toma de decisiones empresariales.
+      </p>
+    </div>
+
+    <!-- C# y C++ -->
+    <div class="bg-[#1a1a1a] border border-[#444] p-8 rounded-md shadow-md">
+      <div class="flex items-center gap-4 mb-4">
+        <div class="text-3xl">🧠</div>
+        <div>
+          <h3 class="text-lg font-bold leading-tight relative inline-block">
+            <span class="z-10 relative">C# & C++</span>
+            <span class="absolute bottom-0 left-0 w-full h-1 bg-purple-400 z-0"></span>
+          </h3>
+          <div class="text-xl font-bold font-sans -mt-1">Lógica y Programas</div>
+        </div>
+      </div>
+      <p class="text-sm leading-relaxed mt-2">
+        Implementación de sistemas como “Clinia+” y videojuegos como “Police and Thieves”. Aplicación de fundamentos de POO, estructuras condicionales y control de flujo.
+      </p>
+    </div>
+
+    <!-- Documentación y Office -->
+    <div class="bg-[#1a1a1a] border border-[#444] p-8 rounded-md shadow-md">
+      <div class="flex items-center gap-4 mb-4">
+        <div class="text-3xl">📝</div>
+        <div>
+          <h3 class="text-lg font-bold leading-tight relative inline-block">
+            <span class="z-10 relative">Documentación</span>
+            <span class="absolute bottom-0 left-0 w-full h-1 bg-green-400 z-0"></span>
+          </h3>
+          <div class="text-xl font-bold font-sans -mt-1">Office 365 & Procesos</div>
+        </div>
+      </div>
+      <p class="text-sm leading-relaxed mt-2">
+        Experiencia elaborando manuales, informes y procedimientos técnicos. Dominio de Word, Excel, PowerPoint y OneDrive para una gestión eficiente y colaborativa de la información.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- FORMACIÓN ACADÉMICA -->
+<section id="formacion" class="relative z-10 py-32 px-6 bg-transparent">
+  <div class="text-center mb-16">
+    <h2 class="text-5xl font-extrabold text-white tracking-tight relative inline-block">
+      <span class="text-white/10 absolute -z-10 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 text-8xl">FORMACIÓN</span>
+      <span class="text-cyan-400">Formación Académica</span>
+    </h2>
+  </div>
+
+  <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- Tarjeta UPC -->
+    <div class="rounded-xl overflow-hidden shadow-lg hover:scale-[1.015] transition">
+      <div class="bg-white h-40 flex justify-center items-center">
+        <img src="img/upc logo.png" alt="UPC" class="h-24 object-contain" />
+      </div>
+      <div class="bg-[#1e293b] text-white p-6 text-center h-[180px]">
+        <h3 class="text-lg font-bold">Ingeniería de Sistemas de Información</h3>
+        <p class="text-sm opacity-80">Universidad Peruana de Ciencias Aplicadas</p>
+        <p class="text-xs opacity-60 mt-1">2021 - Actualidad</p>
+      </div>
+    </div>
+
+    <!-- Meta -->
+    <div class="rounded-xl overflow-hidden shadow-lg hover:scale-[1.015] transition">
+      <div class="bg-white h-40 flex justify-center items-center">
+        <img src="img/meta.png" alt="Meta" class="h-20 object-contain" />
+      </div>
+      <div class="bg-[#1e293b] text-white p-6 text-center h-[180px]">
+        <h3 class="text-lg font-bold">Facebook Marketing Analytics</h3>
+        <p class="text-sm opacity-80">Meta – Coursera</p>
+        <p class="text-xs opacity-60 mt-1">4 meses – 2024</p>
+      </div>
+    </div>
+
+    <!-- IE Business -->
+    <div class="rounded-xl overflow-hidden shadow-lg hover:scale-[1.015] transition">
+      <div class="bg-white h-40 flex justify-center items-center">
+        <img src="img/IE_Business.png" alt="IE Business" class="h-14 object-contain" />
+      </div>
+      <div class="bg-[#1e293b] text-white p-6 text-center h-[180px]">
+        <h3 class="text-lg font-bold">Branding: The Creative Journey</h3>
+        <p class="text-sm opacity-80">IE Business School – Coursera</p>
+        <p class="text-xs opacity-60 mt-1">4 meses – 2023</p>
+      </div>
+    </div>
+
+    <!-- Hong Kong -->
+    <div class="rounded-xl overflow-hidden shadow-lg hover:scale-[1.015] transition">
+      <div class="bg-white h-40 flex justify-center items-center">
+        <img src="img/hong.png" alt="CUHK" class="h-20 object-contain" />
+      </div>
+      <div class="bg-[#1e293b] text-white p-6 text-center h-[180px]">
+        <h3 class="text-lg font-bold">Doing Business in China</h3>
+        <p class="text-sm opacity-80">CUHK – Coursera</p>
+        <p class="text-xs opacity-60 mt-1">4 meses – 2023</p>
+      </div>
+    </div>
+
+    <!-- IBM -->
+    <div class="rounded-xl overflow-hidden shadow-lg hover:scale-[1.015] transition">
+      <div class="bg-white h-40 flex justify-center items-center">
+        <img src="img/IBM.png" alt="IBM" class="h-14 object-contain" />
+      </div>
+      <div class="bg-[#1e293b] text-white p-6 text-center h-[180px]">
+        <h3 class="text-lg font-bold">Cybersecurity Analyst</h3>
+        <p class="text-sm opacity-80">IBM – Coursera</p>
+        <p class="text-xs opacity-60 mt-1">4 meses – 2023</p>
+      </div>
+    </div>
+
+    <!-- UC Davis -->
+    <div class="rounded-xl overflow-hidden shadow-lg hover:scale-[1.015] transition">
+      <div class="bg-white h-40 flex justify-center items-center">
+        <img src="img/University of California, Davis.png" alt="UC Davis" class="h-16 object-contain" />
+      </div>
+      <div class="bg-[#1e293b] text-white p-6 text-center h-[180px]">
+        <h3 class="text-lg font-bold">Learn SQL Basics for Data Science</h3>
+        <p class="text-sm opacity-80">UC Davis – Coursera</p>
+        <p class="text-xs opacity-60 mt-1">4 meses – 2023</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="py-24 bg-[#0f172a] text-white">
+  <div class="text-center mb-16">
+    <h2 class="text-5xl font-extrabold tracking-tight relative inline-block">
+      <span class="text-white/10 absolute -z-10 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 text-8xl">SKILLS</span>
+      <span class="text-cyan-400">Mis Habilidades</span>
+    </h2>
+  </div>
+
+  <!-- Carousel Wrapper -->
+  <div class="relative max-w-7xl mx-auto px-6">
+    <div class="overflow-hidden">
+      <div id="skillTrack" class="flex gap-6 transition-transform duration-500 ease-in-out">
+        
+        <!-- Tarjetas de habilidades -->
+        <div class="flex-shrink-0 bg-white/10 border border-white/20 rounded-xl p-6 text-center w-60">
+          <img src="img/html.png" alt="HTML" class="h-16 mx-auto mb-3">
+          <h5 class="text-lg font-semibold text-white">HTML</h5>
+          <p class="text-sm text-white/70">Intermedio</p>
+        </div>
+        <div class="flex-shrink-0 bg-white/10 border border-white/20 rounded-xl p-6 text-center w-60">
+          <img src="img/CSS.png" alt="CSS" class="h-16 mx-auto mb-3">
+          <h5 class="text-lg font-semibold text-white">CSS</h5>
+          <p class="text-sm text-white/70">Intermedio</p>
+        </div>
+        <div class="flex-shrink-0 bg-white/10 border border-white/20 rounded-xl p-6 text-center w-60">
+          <img src="img/JS.png" alt="JavaScript" class="h-16 mx-auto mb-3">
+          <h5 class="text-lg font-semibold text-white">JavaScript</h5>
+          <p class="text-sm text-white/70">Intermedio</p>
+        </div>
+        <div class="flex-shrink-0 bg-white/10 border border-white/20 rounded-xl p-6 text-center w-60">
+          <img src="img/ANGULAR.png" alt="Angular" class="h-16 mx-auto mb-3">
+          <h5 class="text-lg font-semibold text-white">Angular</h5>
+          <p class="text-sm text-white/70">Básico</p>
+        </div>
+        <div class="flex-shrink-0 bg-white/10 border border-white/20 rounded-xl p-6 text-center w-60">
+          <img src="img/WORD.png" alt="Word" class="h-16 mx-auto mb-3">
+          <h5 class="text-lg font-semibold text-white">Word</h5>
+          <p class="text-sm text-white/70">Intermedio</p>
+        </div>
+        <div class="flex-shrink-0 bg-white/10 border border-white/20 rounded-xl p-6 text-center w-60">
+          <img src="img/EXCEL.png" alt="Excel" class="h-16 mx-auto mb-3">
+          <h5 class="text-lg font-semibold text-white">Excel</h5>
+          <p class="text-sm text-white/70">Intermedio</p>
+        </div>
+        <div class="flex-shrink-0 bg-white/10 border border-white/20 rounded-xl p-6 text-center w-60">
+          <img src="img/PP.png" alt="PowerPoint" class="h-16 mx-auto mb-3">
+          <h5 class="text-lg font-semibold text-white">PowerPoint</h5>
+          <p class="text-sm text-white/70">Intermedio</p>
+        </div>
+        <div class="flex-shrink-0 bg-white/10 border border-white/20 rounded-xl p-6 text-center w-60">
+          <img src="img/PG.png" alt="PostgreSQL" class="h-16 mx-auto mb-3">
+          <h5 class="text-lg font-semibold text-white">PostgreSQL</h5>
+          <p class="text-sm text-white/70">Intermedio</p>
+        </div>
+        <div class="flex-shrink-0 bg-white/10 border border-white/20 rounded-xl p-6 text-center w-60">
+          <img src="img/FIGMA.png" alt="Figma" class="h-16 mx-auto mb-3">
+          <h5 class="text-lg font-semibold text-white">Figma</h5>
+          <p class="text-sm text-white/70">Intermedio</p>
+        </div>
+        <div class="flex-shrink-0 bg-white/10 border border-white/20 rounded-xl p-6 text-center w-60">
+          <img src="img/SQL.png" alt="SQL Server" class="h-16 mx-auto mb-3">
+          <h5 class="text-lg font-semibold text-white">SQL Server</h5>
+          <p class="text-sm text-white/70">Intermedio</p>
+        </div>
+        <div class="flex-shrink-0 bg-white/10 border border-white/20 rounded-xl p-6 text-center w-60">
+          <img src="img/MONGO.png" alt="MongoDB" class="h-16 mx-auto mb-3">
+          <h5 class="text-lg font-semibold text-white">MongoDB</h5>
+          <p class="text-sm text-white/70">Básico</p>
+        </div>
+        <div class="flex-shrink-0 bg-white/10 border border-white/20 rounded-xl p-6 text-center w-60">
+          <img src="img/SC.png" alt="Scrum" class="h-16 mx-auto mb-3">
+          <h5 class="text-lg font-semibold text-white">SCRUM</h5>
+          <p class="text-sm text-white/70">Metodologías Ágiles</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Controles -->
+    <div class="flex justify-center gap-6 mt-8">
+      <button onclick="scrollSkills(-1)" class="text-cyan-400 hover:text-white text-3xl">&larr;</button>
+      <button onclick="scrollSkills(1)" class="text-cyan-400 hover:text-white text-3xl">&rarr;</button>
+    </div>
+  </div>
+</section>
+
+<!-- Script para loop del carrusel -->
+<script>
+  const skillTrack = document.getElementById("skillTrack");
+  const cardWidth = 260; // w-60 + gap
+  let position = 0;
+
+  function scrollSkills(direction) {
+    const visibleWidth = skillTrack.parentElement.offsetWidth;
+    const trackWidth = skillTrack.scrollWidth;
+
+    position += direction * cardWidth;
+
+    if (position + visibleWidth >= trackWidth + cardWidth) {
+      position = 0; // reinicia si llegas al final
+    }
+
+    if (position < 0) {
+      position = trackWidth - visibleWidth; // va al final si vas hacia atrás demasiado
+    }
+
+    skillTrack.style.transform = `translateX(-${position}px)`;
+  }
+
+  // Loop automático cada 3s
+  setInterval(() => scrollSkills(1), 3000);
+</script>
+
+
+  <!-- PROYECTOS -->
+  <section id="proyectos" class="relative z-10 py-32 px-6 bg-transparent text-white">
+    <div class="text-center mb-16">
+      <h2 class="text-5xl font-extrabold tracking-tight relative inline-block">
+        <span class="text-white/10 absolute -z-10 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 text-8xl">PROYECTOS</span>
+        <span class="text-cyan-400">Mis Proyectos</span>
+      </h2>
+    </div>
+
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+
+      <!-- COMPONENTE -->
+      <!-- Solo duplica esto y cambia las imágenes y los textos según el proyecto -->
+      <div data-aos="fade-up" class="bg-white text-gray-800 rounded-xl shadow-lg overflow-hidden hover:scale-[1.02] transition-transform duration-300">
+        <!-- Mini galería -->
+        <div class="grid grid-cols-3 gap-1 p-2 bg-white">
+          <img src="img/rv1.png" alt="Red Velvet 1" class="object-cover h-40 w-full rounded" />
+          <img src="img/rv2.png" alt="Red Velvet 2" class="object-cover h-40 w-full rounded" />
+          <img src="img/rv3.png" alt="Red Velvet 3" class="object-cover h-40 w-full rounded" />
+        </div>
+        <!-- Descripción -->
+        <div class="p-6 bg-[#1e293b] text-white">
+          <h3 class="text-2xl font-bold mb-2 text-center">Red Velvet Bakery</h3>
+          <p class="text-sm text-white/80 text-center mb-2">FrontEnd • Curso de Finanzas</p>
+          <p class="text-white/70 text-sm mb-4 text-justify">
+            Proyecto desarrollado con Angular, SCSS y JavaScript. Interfaz para gestionar cuentas a crédito, actualizar saldos, pagos y generar reportes desde un panel interactivo.
+          </p>
+          <div class="text-center">
+            <button onclick="openModal('RedVelvet', ['img/rv1.png', 'img/rv2.png', 'img/rv3.png'])"
+              class="mt-2 inline-block px-5 py-2 rounded-full border border-cyan-400 text-cyan-400 font-semibold hover:bg-cyan-400 hover:text-[#0f172a] transition duration-300">
+              Ver más
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto 2 -->
+      <div data-aos="fade-up" data-aos-delay="100" class="bg-white text-gray-800 rounded-xl shadow-lg overflow-hidden hover:scale-[1.02] transition-transform duration-300">
+        <div class="grid grid-cols-3 gap-1 p-2 bg-white">
+          <img src="img/c1.png" alt="" class="object-cover h-40 w-full rounded" />
+          <img src="img/c2.png" alt="" class="object-cover h-40 w-full rounded" />
+          <img src="img/c3.png" alt="" class="object-cover h-40 w-full rounded" />
+        </div>
+        <div class="p-6 bg-[#1e293b] text-white">
+          <h3 class="text-2xl font-bold mb-2 text-center">Clinia+</h3>
+          <p class="text-sm text-white/80 text-center mb-2">TF Diseño de Experimentos de SI</p>
+          <p class="text-white/70 text-sm mb-4 text-justify">
+            Sistema desarrollado con C#, Windows Forms y SQL Server para clínicas que permite gestionar pacientes, recetas y roles con interfaces separadas.
+          <br><br></p>
+          <div class="text-center">
+            <button onclick="openModal('Clinia', ['img/c1.png', 'img/c2.png', 'img/c3.png'])"
+              class="mt-2 inline-block px-5 py-2 rounded-full border border-cyan-400 text-cyan-400 font-semibold hover:bg-cyan-400 hover:text-[#0f172a] transition duration-300">
+              Ver más
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto 3 -->
+      <div data-aos="fade-up" data-aos-delay="200" class="bg-white text-gray-800 rounded-xl shadow-lg overflow-hidden hover:scale-[1.02] transition-transform duration-300">
+        <div class="grid grid-cols-3 gap-1 p-2 bg-white">
+          <img src="img/p1.png" alt="" class="object-cover h-40 w-full rounded" />
+          <img src="img/p2.png" alt="" class="object-cover h-40 w-full rounded" />
+          <img src="img/p3.png" alt="" class="object-cover h-40 w-full rounded" />
+        </div>
+        <div class="p-6 bg-[#1e293b] text-white">
+          <h3 class="text-2xl font-bold mb-2 text-center">Police and Thieves</h3>
+          <p class="text-sm text-white/80 text-center mb-2">TF Programación Orientada a Objetos</p>
+          <p class="text-white/70 text-sm mb-4 text-justify">
+            Juego de estrategia en C++ con niveles, lógica de puntuación y control de personajes. Contiene menú, configuraciones y roles personalizables.
+          </p>
+          <div class="text-center">
+            <button onclick="openModal('Police', ['img/p1.png', 'img/p2.png', 'img/p3.png'])"
+              class="mt-2 inline-block px-5 py-2 rounded-full border border-cyan-400 text-cyan-400 font-semibold hover:bg-cyan-400 hover:text-[#0f172a] transition duration-300">
+              Ver más
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto 4 -->
+      <div data-aos="fade-up" data-aos-delay="300" class="bg-white text-gray-800 rounded-xl shadow-lg overflow-hidden hover:scale-[1.02] transition-transform duration-300">
+        <div class="grid grid-cols-3 gap-1 p-2 bg-white">
+          <img src="img/al 1.png" alt="" class="object-cover h-40 w-full rounded" />
+          <img src="img/al 2.png" alt="" class="object-cover h-40 w-full rounded" />
+          <img src="img/al 3.png" alt="" class="object-cover h-40 w-full rounded" />
+        </div>
+        <div class="p-6 bg-[#1e293b] text-white">
+          <h3 class="text-2xl font-bold mb-2 text-center">AluraGeek</h3>
+          <p class="text-sm text-white/80 text-center mb-2">Oracle Next Education</p>
+          <p class="text-white/70 text-sm mb-4 text-justify">
+            Web desarrollada con HTML, CSS y JavaScript. Administra productos de una tienda usando una FakeAPI, con funciones de edición, borrado y listado.
+          </p>
+          <div class="text-center">
+            <button onclick="openModal('Alura', ['img/al 1.png', 'img/al 2.png', 'img/al 3.png'])"
+              class="mt-2 inline-block px-5 py-2 rounded-full border border-cyan-400 text-cyan-400 font-semibold hover:bg-cyan-400 hover:text-[#0f172a] transition duration-300">
+              Ver más
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL GENERAL -->
+    <div id="projectModal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black bg-opacity-80 overflow-auto">
+      <div class="bg-white rounded-lg shadow-xl w-full max-w-3xl relative p-4">
+        <button onclick="closeModal()" class="absolute top-2 right-4 text-3xl text-gray-600 hover:text-red-500 font-bold">&times;</button>
+        <div class="flex justify-center items-center h-[400px]">
+          <img id="modalImg" src="" alt="Proyecto" class="max-h-full object-contain rounded-lg" />
+        </div>
+        <div class="flex justify-center gap-8 mt-4">
+          <button onclick="prevImage()" class="text-3xl text-gray-600 hover:text-cyan-500 font-bold">&#10094;</button>
+          <button onclick="nextImage()" class="text-3xl text-gray-600 hover:text-cyan-500 font-bold">&#10095;</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCRIPT MODAL -->
+    <script>
+      let modalImages = [];
+      let modalIndex = 0;
+
+      function openModal(projectId, images) {
+        modalImages = images;
+        modalIndex = 0;
+        document.getElementById("modalImg").src = modalImages[modalIndex];
+        document.getElementById("projectModal").classList.remove("hidden");
+      }
+
+      function closeModal() {
+        document.getElementById("projectModal").classList.add("hidden");
+      }
+
+      function nextImage() {
+        modalIndex = (modalIndex + 1) % modalImages.length;
+        document.getElementById("modalImg").src = modalImages[modalIndex];
+      }
+
+      function prevImage() {
+        modalIndex = (modalIndex - 1 + modalImages.length) % modalImages.length;
+        document.getElementById("modalImg").src = modalImages[modalIndex];
+      }
+    </script>
+  </section>
+
+
+<!-- Font Awesome (en tu <head>) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- CONTACTO -->
+<section id="contacto" class="relative z-10 py-32 px-6 bg-transparent">
+  <div class="text-center mb-16">
+    <h2 class="text-5xl font-extrabold text-white tracking-tight relative inline-block">
+      <span class="text-white/10 absolute -z-10 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 text-8xl">CONTACTO</span>
+      <span class="text-cyan-400">Contáctame</span>
+    </h2>
+  </div>
+
+  <div class="max-w-3xl mx-auto bg-white/10 backdrop-blur-md p-10 rounded-2xl shadow-lg border border-white/10" data-aos="fade-up">
+    <form action="https://formsubmit.co/gabrielareyes9194@gmail.com" method="POST" class="space-y-6">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <input type="text" name="name" placeholder="Tu nombre" required
+          class="w-full px-4 py-3 bg-white/90 text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400">
+        
+        <input type="email" name="email" placeholder="Tu correo" required
+          class="w-full px-4 py-3 bg-white/90 text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400">
+      </div>
+
+      <input type="text" name="subject" placeholder="Asunto" required
+        class="w-full px-4 py-3 bg-white/90 text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400">
+
+      <textarea name="message" rows="5" placeholder="Tu mensaje" required
+        class="w-full px-4 py-3 bg-white/90 text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400"></textarea>
+
+      <div class="text-center">
+        <button type="submit"
+          class="px-8 py-3 bg-cyan-500 hover:bg-cyan-400 text-white rounded-full font-semibold transition duration-300">
+          Enviar mensaje
         </button>
-        <div class="collapse navbar-collapse px-lg-3" id="navbarCollapse">
-            <div class="navbar-nav m-auto py-0">
-                <a href="#inicio" class="nav-link">Inicio</a>
-                <a href="#sobre" class="nav-item nav-link">Sobre Mí</a>
-                <a href="#formacion" class="nav-item nav-link">Formación</a>
-                <a href="#experiencia" class="nav-item nav-link">Experiencia</a>
-                <a href="#skill" class="nav-item nav-link">Skill</a>
-                <a href="#proyectos" class="nav-item nav-link">Proyectos</a>
-                <a href="#contacto" class="nav-item nav-link">Contacto</a>
-            </div>
-            <a href="#contacto" class="btn btn-outline-primary d-none d-lg-block"  style="text-decoration: none;">Contáctame</a>
-            <a href="https://wa.me/51943627895" class="btn btn-outline-primary d-none d-lg-block" style="margin-left: 20px;text-decoration: none;">WhatsApp <i class="fab fa-whatsapp"></i></a>
-        </div>
-    </nav>
-    <!-- Navbar End -->
+      </div>
 
-    <!-- Header Start -->
-    <div id="inicio" class="container-fluid bg-primary d-flex align-items-center mb-5 py-5" style="min-height: 100vh;">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-5 col-md-6 col-sm-12 px-5 pl-lg-0 pb-5 pb-lg-0 text-center text-md-left">
-                    <img class="img-fluid w-75 w-md-100 rounded-circle shadow-sm" src="img/IMG_4368.JPEG" alt="">
-                </div>
-                <div class="col-lg-7 col-md-6 col-sm-12 text-center text-lg-left">
-                    <h3 class="text-white font-weight-normal mb-3">Hola, mi nombre es</h3>
-                    <h1 class="display-4 display-md-3 text-uppercase text-primary mb-2" style="-webkit-text-stroke: 2px #ffffff;">Gabriela Reyes</h1>
-                    <br>
-                    <h5 class="text-white font-weight-normal mb-3" style="text-align: justify; max-width: 1500px;">Estudiante de Ingeniería de Sistemas de Información, destacada por mi compromiso, adaptabilidad e inteligencia emocional. Me diferencio por abordar desafíos con creatividad y eficiencia, manteniendo una actitud profesional y empática. Busco contribuir a proyectos innovadores, optimizando procesos y mejorando la experiencia del usuario, en un entorno que valore la excelencia y el desarrollo continuo.</h5>
-                    <h1 class="typed-text-output d-inline font-weight-lighter text-white"></h1>
-                    <div class="typed-text d-none">Web Designer, Web Developer, Front End Developer, Apps Designer, Apps Developer</div>
-                    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start pt-5">
-                        <a href="https://drive.google.com/file/d/1q8Gewt42HXPJb_yr7D3lhuMcSZp1EwIw/view?usp=sharing" class="btn btn-outline-light btn-space m-2">Descargar CV</a>
-                        <a href="https://www.linkedin.com/in/gabriela-reyes-a7b46a1a5/" class="btn btn-outline-light btn-space m-2">Linkedin</a>
-                        <a href="https://github.com/GabrielaReyes19" class="btn btn-outline-light btn-space m-2">Github</a>                    </div>
-                </div>
-            </div>
-        </div>
+      <!-- Configuración de redirección -->
+      <input type="hidden" name="_next" value="https://gabrielareyes19.github.io/Portafolio-Gabriela/">
+      <input type="hidden" name="_captcha" value="false">
+    </form>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="bg-[#0f172a] text-white py-12 mt-20 border-t border-white/10" data-aos="fade-up">
+  <div class="max-w-4xl mx-auto text-center px-6">
+
+    <!-- Íconos sociales -->
+    <div class="flex justify-center gap-6 mb-6 text-2xl">
+      <a href="https://github.com/GabrielaReyes19" target="_blank" class="hover:text-cyan-400 transition" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://wa.me/51943627895" target="_blank" class="hover:text-cyan-400 transition" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/gabriela-reyes-a7b46a1a5/" target="_blank" class="hover:text-cyan-400 transition" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://www.instagram.com/gabrielareyes9194/" target="_blank" class="hover:text-cyan-400 transition" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
     </div>
-    <!-- Header End -->
 
-    <!-- About Start -->
-    <div id="sobre" class="container-fluid py-5">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">SOBRE</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Sobre MÍ</h1>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <p>Estudiante de 8vo ciclo en Ingeniería de Sistemas de Información, reconocida por mi compromiso, adaptabilidad e inteligencia emocional. Lo que me diferencia es mi capacidad para abordar desafíos con creatividad y eficiencia, manteniendo siempre una actitud profesional y empática. Mi objetivo es contribuir al éxito de proyectos innovadores, aportando soluciones prácticas que optimicen procesos y mejoren la experiencia del usuario. Aspiro a crecer profesionalmente en un entorno que valore la excelencia y el desarrollo continuo, donde pueda seguir aprendiendo y aplicando mis conocimientos para generar un impacto positivo en la organización.</p>
-                    <div class="row mb-3">
-                        <div class="col-sm-6 py-2"><h6>Nombre: <span class="text-secondary">Gabriela Reyes</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Edad: <span class="text-secondary">21 años</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Grado: <span class="text-secondary">Estudiante</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Universidad: <span class="text-secondary">Universidad Peruana de Ciencias Aplicadas (UPC)</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Teléfono: <span class="text-secondary">+51 943 627 895</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Email: <span class="text-secondary">gabrielareyes9194@gmail.com</span></h6></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- About End -->
-
-    <!-- Formación Start -->
-    <div class="container-fluid pt-5" id="formacion">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-            <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Formación</h1>
-            <h1 class="position-absolute text-uppercase text-primary responvie tittle">Formación académica</h1>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-4 mb-5 text-center">
-                    <div class="position-relative mb-4 border p-3 d-flex flex-column align-items-center" style="height: 320px;">
-                        <img class="img-fluid rounded mb-4" src="img/upc logo.png" alt="formac" style="max-height: 150px;">
-                        <h5 class="font-weight-medium mb-2">Ingeniería de Sistemas de Información</h5>
-                        <h6>Universidad Peruana de Ciencias Aplicadas</h6>
-                        <h7>2021 - Actualidad</h7>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-5 text-center">
-                    <div class="position-relative mb-4 border p-3 d-flex flex-column align-items-center" style="height: 320px;">
-                        <img class="img-fluid rounded mb-4" src="img/meta.png" alt="" style="max-height: 150px;">
-                        <h5 class="font-weight-medium mb-2">Facebook Marketing Analytics</h5>
-                        <h6>Meta – Coursera</h6>
-                        <h7>4 meses – 2024</h7>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-5 text-center">
-                    <div class="position-relative mb-4 border p-3 d-flex flex-column align-items-center" style="height: 320px;">
-                        <img class="img-fluid rounded mb-4" src="img/IE_Business.png" alt="" style="max-height: 150px;">
-                        <h5 class="font-weight-medium mb-2">Branding: The Creative Journey Specialization</h5>
-                        <h6>IE Business School – Coursera</h6>
-                        <h7>4 meses – 2023</h7>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-4 mb-5 text-center">
-                    <div class="position-relative mb-4 border p-3 d-flex flex-column align-items-center" style="height: 320px;">
-                        <img class="img-fluid rounded mb-4" src="img/hong.png" alt="formac" style="max-height: 150px;">
-                        <h5 class="font-weight-medium mb-2">Doing Business in China Specialization</h5>
-                        <h6>The Chinese University of Hong Kong – Coursera</h6>
-                        <h7>4 meses – 2023</h7>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-5 text-center">
-                    <div class="position-relative mb-4 border p-3 d-flex flex-column align-items-center" style="height: 320px;">
-                        <img class="img-fluid rounded mb-4" src="img/IBM.png" alt="" style="max-height: 150px;">
-                        <h5 class="font-weight-medium mb-2">IBM Cybersecurity Analyst</h5>
-                        <h6>IBM – Coursera</h6>
-                        <h7>4 meses – 2023</h7>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-5 text-center">
-                    <div class="position-relative mb-4 border p-3 d-flex flex-column align-items-center" style="height: 320px;">
-                        <img class="img-fluid rounded mb-4" src="img/University of California, Davis.png" alt="" style="max-height: 150px;">
-                        <h5 class="font-weight-medium mb-2">Learn SQL Basics for Data Science Specialization</h5>
-                        <h6>University of California, Davis – Coursera</h6>
-                        <h7>4 meses – 2023</h7>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Formación End -->
-
-    <!-- Experiencia Start -->
-    <div class="container-fluid py-5" id="experiencia">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Experiencia</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Experiencia Laboral</h1>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h3 class="mb-4">Mi Experiencia</h3>
-                    <div class="border-left border-primary pt-2 pl-4 ml-2">
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Asesor de Atención al Cliente </h5>
-                            <p class="mb-2"><strong>Banco Ripley Chile, Atento S.A.C </strong>
-                            <br><small>Diciembre 2023 – Marzo 2024</small></p>
-                            <ul>
-                            <li>Proporcioné información detallada a los clientes sobre los productos y servicios de Banco Ripley, guiándolos a través de diversos procesos de gestión. Ofrecí soporte tecnológico, asistiendo a los clientes en la resolución de problemas en el aplicativo del banco y orientándolos sobre la solución de errores comunes.</li>
-                            </ul>
-                              
-                            <ul>
-                            <li>Registré y documenté cada interacción mediante tickets, asegurando claridad en cada proceso. Desarrollé habilidades en la gestión de información y mantuve una comunicación precisa. Aprendí a ser paciente y empático, manejando situaciones desafiantes con firmeza y profesionalismo.</li>
-                            </ul>
-                        </div>
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Asistente Administrativa y de Documentación </h5>
-                            <p class="mb-2"><strong>Technomatic Peru S.R.L</strong> 
-                            <br><small>2021 - 2023</small></p>
-                            <ul>
-                            <li>Colaboré activamente en la gestión de documentos y procesos administrativos, en Technomatic Peru S.R.L, un negocio familiar especializado en soluciones de elevación e industriales. Me especialicé en la elaboración de cotizaciones y documentos esenciales.</li>
-                            </ul>
-                              
-                            <ul>
-                            <li>Desarrollé habilidades efectivas en la creación de cotizaciones, investigación de costos y presentación de propuestas competitivas.</li>
-                            </ul>   
-                        
-                            <ul>
-                            <li>Lideré la organización y mantenimiento de archivos en Technomatic Peru, asegurando un acceso eficiente a la información necesaria.</li>
-                            </ul>  
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Experiencia End -->
-
-    <!-- Skill Start -->
-    <div class="container-fluid py-5" id="skill">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center mb-5">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Skills</h1>
-                <h1 class="position-absolute text-uppercase text-primary">My Skills</h1>
-            </div>
-            <div class="slider">
-                <button id="prevBtn" class="carousel-control-prev">&#9664;</button>
-                <div class="slide-track">
-                    <div class="slide">
-                        <img src="img/html.png" alt="HTML" />
-                        <h5>HTML</h5>
-                        <h6>Intermedio</h6>
-                    </div>
-                    <div class="slide">
-                        <img src="img/CSS.png" alt="CSS" />
-                        <h5>CSS</h5>
-                        <h6>Intermedio</h6>
-                    </div>
-                    <div class="slide">
-                        <img src="img/JS.png" alt="JavaScript" />
-                        <h5>JAVASCRIPT</h5>
-                        <h6>Intermedio</h6>
-                    </div>
-                    <div class="slide">
-                        <img src="img/ANGULAR.png" alt="Angular" />
-                        <h5>ANGULAR</h5>
-                        <h6>Básico</h6>
-                    </div>
-                    <div class="slide">
-                        <img src="img/WORD.png" alt="Word" />
-                        <h5>WORD</h5>
-                        <h6>Intermedio</h6>
-                    </div>
-                    <div class="slide">
-                        <img src="img/EXCEL.png" alt="Excel" />
-                        <h5>EXCEL</h5>
-                        <h6>Intermedio</h6>
-                    </div>
-                    <div class="slide">
-                        <img src="img/PP.png" alt="PowerPoint" />
-                        <h5>POWERPOINT</h5>
-                        <h6>Intermedio</h6>
-                    </div>
-                    <div class="slide">
-                        <img src="img/PG.png" alt="POSTGRESQL" />
-                        <h5>POSTGRESQL</h5>
-                        <h6>Intermedio</h6>
-                    </div>
-                    <div class="slide">
-                        <img src="img/FIGMA.png" alt="Figma" />
-                        <h5>FIGMA</h5>
-                        <h6>Intermedio</h6>
-                    </div>
-                    <div class="slide">
-                        <img src="img/SQL.png" alt="SQL" />
-                        <h5>SQL SERVER</h5>
-                        <h6>Intermedio</h6>
-                    </div>
-                    <div class="slide">
-                        <img src="img/MONGO.png" alt="MongoDB" />
-                        <h5>MONGO DB</h5>
-                        <h6>Básico</h6>
-                    </div>
-                    <div class="slide">
-                        <img src="img/SC.png" alt="Source Control" />
-                        <h5>SCRUM - METODOLOGÍAS ÁGILES</h5>
-                    </div>
-                </div>
-                <button id="nextBtn" class="carousel-control-next">&#9654;</button>
-            </div>
-        </div>
-    </div>
-    <!-- Skill End -->
+    <!-- Texto final -->
+    <p class="text-sm text-white/60">
+      &copy; 2025 <span class="font-semibold text-white">Gabriela Reyes Pazo</span> – Todos los derechos reservados.
+    </p>
+  </div>
+</footer>
 
 
-    <!-- Proyectos Start -->
-    <div class="container-fluid pt-5 pb-3" id="proyectos">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">PROYECTOS</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Mis Proyectos</h1>
-            </div>
-            
-            <div class="row portfolio-container bg-light p-4 rounded" style="border: 1px solid #dee2e6;">
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/rv1.png" alt="" style="height: 240px; object-fit: cover;">
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/rv2.png" alt="" style="height: 250px; object-fit: cover;">
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/rv3.png" alt="" style="height: 240px; object-fit: cover;">
-                    </div>
-                </div>
-                <div class="col-12 text-center">
-                    <h3>Red Velvet Bakery</h3>
-                    <h5>Desarrollo del FrontEnd del Aplicativo || Trabajo Final del curso de Finanzas</h5>
-                    <p><b>Proyecto realizado con Angular, SCSS y JavaScript.</b><br>La aplicación presenta una interfaz intuitiva para gestionar cuentas a crédito de clientes. Permite actualizar saldos, pagos, intereses y fechas de vencimiento fácilmente. Los usuarios pueden configurar tasas de interés y generar reportes personalizados desde un panel interactivo. También facilita el control de límites de crédito y fechas de pago mensuales, ofreciendo una experiencia de usuario eficiente. 
-                    </p>
-                    <a href="https://github.com/GabrielaReyes19/TF_FINANZAS_FRONT.git" class="btn btn-primary mt-3" target="_blank">Ver en GitHub</a>
-                </div>
-            </div>
-            <br><br>
-            <div class="row portfolio-container bg-light p-4 rounded" style="border: 1px solid #dee2e6;">
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/c1.png" alt="" style="height: 240px; object-fit: cover;">
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/c2.png" alt="" style="height: 250px; object-fit: cover;">
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/c3.png" alt="" style="height: 240px; object-fit: cover;">
-                    </div>
-                </div>
-                <div class="col-12 text-center">
-                    <h3>Clinia+</h3>
-                    <h5>Desarrollo completo del Programa|| TF Diseño de Experimientos de SI</h5>
-                    <p><b>Proyecto realizado con C#, Windows Form y SQL Server</b><br>Consiste en un sistema de clínica para pacientes con VIH  cuya finalidad es la realización de prescripción de recetas a pacientes por doctores. El sistema debe presentar desarrollado los módulos de “Doctores”, “Pacientes”, “Recepcionistas”, “Laboratorio”, “Prescripciones” y “Sesión”. Asimismo, el sistema cuenta con tres roles "Admin","Doctor" y "Recepcionista" los cuales tienen limitaciones y solo tienen acceso a determinadas tareas.
-                    </p>
-                    <a href="https://github.com/GabrielaReyes19/CLINIA-.git" class="btn btn-primary mt-3" target="_blank">Ver en GitHub</a>
-                </div>
-            </div>
-            <br><br>
-            <div class="row portfolio-container bg-light p-4 rounded" style="border: 1px solid #dee2e6;">
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/p1.png" alt="" style="height: 350px; object-fit: cover;">
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/p2.png" alt="" style="height: 350px; object-fit: cover;">
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/p3.png" alt="" style="height: 350px; object-fit: cover;">
-                    </div>
-                </div>
-                <div class="col-12 text-center">
-                    <h3>Police and Thieves</h3>
-                    <h5>Desarrollo completo del Programa|| TF Programación Orientada a Objetos</h5>
-                    <p><b>Programa realizado con C++</b><br>El videojuego empieza con una pantalla de presentación y un menú con opciones de jugar, configurar y leer instrucciones. El jugador ajusta el tiempo, número de trabajadores, rateros y ciudadanos, y elige un nivel. Durante el juego, el jugador dirige a los trabajadores presionando "space", mientras los rateros intentan eliminarlos. Cumplir objetivos suma puntos, y perder trabajadores resta puntos. El objetivo es alcanzar 100 puntos antes de que se acabe el tiempo, ganando si lo logra y perdiendo si no.
-                    </p>
-                    <a href="https://github.com/GabrielaReyes19/Police-and-Thieves.git" class="btn btn-primary mt-3" target="_blank">Ver en GitHub</a>
-                </div>
-            </div>
-            <br><br>
-            <div class="row portfolio-container bg-light p-4 rounded" style="border: 1px solid #dee2e6;">
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/al 1.png" alt="" style="height: 240px; object-fit: cover;">
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/al 2.png" alt="" style="height: 250px; object-fit: cover;">
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/al 3.png" alt="" style="height: 240px; object-fit: cover;">
-                    </div>
-                </div>
-                <div class="col-12 text-center">
-                    <h3>AluraGeek</h3>
-                    <h5>Desarrollo del FrontEnd del Aplicativo || Actividad del Programa Oracle Next Education</h5>
-                    <p><b>Proyecto desarrollado con HTML, CSS y JavaScript.</b><br>La aplicación cuenta con una interfaz intuitiva para gestionar productos de una tienda, permitiendo agregar, actualizar, guardar y eliminar productos. Está conectada a una FakeAPI alojada en Vercel, un servicio en la nube.
-                    </p>
-                    <a href="https://github.com/GabrielaReyes19/alura-geek-main.git" class="btn btn-primary mt-3" target="_blank">Ver en GitHub</a>
-                </div>
-            </div>
 
-        </div>
-    </div>
-    <!-- Proyectos End -->
-
-      <!-- Contact Start -->
-      <div class="container-fluid py-5" id="contacto">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Contacto</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Contáctame</h1>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="contact-form text-center">
-                        <div id="success"></div>
-                        <form action="https://formsubmit.co/gabrielareyes9194@gmail.com" method="POST">
-                            <div class="form-row">
-                                <div class="control-group col-sm-6">
-                                    <input type="text" name="name" class="form-control p-4" placeholder="Your Name" required />
-                                </div>
-                                <div class="control-group col-sm-6">
-                                    <input type="email" name="email" class="form-control p-4" placeholder="Your Email" required />
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <input type="text" name="subject" class="form-control p-4" placeholder="Subject" required />
-                            </div>
-                            <div class="control-group">
-                                <textarea name="message" class="form-control py-3 px-4" rows="5" placeholder="Message" required></textarea>
-                            </div>
-                            <div>
-                                <button class="btn btn-outline-primary" type="submit">Send Message</button>
-                            </div>
-
-                            <input type="hidden" name="_next" value="https://gabrielareyes19.github.io/Portafolio-Gabriela//" />
-                            <input type="hidden" name="_captcha" value="false" />
-
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Contact End -->
-
-    <!-- Footer Start -->
-    <div class="container-fluid bg-primary text-white mt-5 py-5 px-sm-3 px-md-5">
-        <br>
-        <div class="container text-center py-5">
-            <div class="d-flex justify-content-center mb-4">
-                <a class="btn btn-light btn-social mr-2" href="https://github.com/GabrielaReyes19"><i class="fab fa-github"></i></a>
-                <a class="btn btn-light btn-social mr-2" href="https://wa.me/51943627895"><i class="fab fa-whatsapp"></i></a>
-                <a class="btn btn-light btn-social mr-2" href="https://www.linkedin.com/in/gabriela-reyes-a7b46a1a5/"><i class="fab fa-linkedin-in"></i></a>
-                <a class="btn btn-light btn-social" href="https://www.instagram.com/gabrielareyes9194/"><i class="fab fa-instagram"></i></a>
-            </div>
-            <p class="m-0">&copy; <a class="text-white font-weight-bold" href="#">Gabriela Reyes Pazo</a>
-            </p><br>
-        </div>
-    </div>
-    <!-- Footer End -->
-
-    <!-- Contact Javascript File -->
-    <script src="mail/app.js"></script>
-
-    <!-- Javascript -->
-    <script src="js/main.js"></script>
-    <script src="js/carrusel.js"></script>
+  <!-- SCRIPTS -->
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 80 },
+        color: { value: "#00ffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.4 },
+        size: { value: 3 },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#00ffff",
+          opacity: 0.3,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 1.5
+        }
+      }
+    });
+    AOS.init();
+  </script>
 </body>
-
 </html>
-
